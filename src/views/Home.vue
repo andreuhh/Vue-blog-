@@ -18,7 +18,7 @@
     <div v-if="error">{{ error }}</div>
     <div v-if="posts.length">
       <PostList v-if="showPosts" :posts="posts" />
-      <TagCloud />
+      <TagCloud :posts="posts" />
     </div>
     <div v-else><Spinner /></div>
     <button @click="showPosts = !showPosts">Toggle Post</button>

@@ -1,6 +1,6 @@
 <template>
   <div class="tag-cloud">
-    <h3>Tags</h3>
+    <h3>Tags Cloud</h3>
     <div v-for="tag in tags" :key="tag">
       <router-link :to="{ name: 'Tag', params: { tag: tag } }">
         #{{ tag }}
@@ -23,6 +23,14 @@ export default {
 
 <style>
 .tag-cloud {
-  background-color: orangered;
+  background-color: rgb(236, 97, 97);
+}
+.tag-cloud a {
+  color: white;
+  text-decoration: none;
+}
+
+.tag-cloud a.router-link-active {
+  font-weight: 700;
 }
 </style>
