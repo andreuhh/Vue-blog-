@@ -47,6 +47,7 @@ export default {
 
       // Send new post
       const res = await projectFirestore.collection("posts").add(post);
+      console.log(res);
 
       router.push({ name: "Home" }); // redirect su home after submit
     };
