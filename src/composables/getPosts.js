@@ -8,7 +8,9 @@ const getPosts = () => {
     const load = async () => {
       try {
         // collection is a firestore method
-        const res = await projectFirestore.collection('posts').get()
+        const res = await projectFirestore.collection('posts')
+          .orderBy('createdAt', 'asc')
+          .get()
         
         posts.value = res.docs.map(doc => {
           return {...doc.data(), id: doc.id}
